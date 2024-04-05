@@ -1,6 +1,10 @@
+# FoundryNFT
+
+A simple NFT created using Foundry.
+
 ## Foundry
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.
 
 Foundry consists of:
 
@@ -9,58 +13,39 @@ Foundry consists of:
 -   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
 -   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
 
-## Documentation
+### Installing Openzeppelin
 
-https://book.getfoundry.sh/
+```shell
+$ forge install Openzeppelin/openzeppelin-contracts --no-commit
+```
 
-## Usage
+### Usage
 
-### Build
+#### Build
 
 ```shell
 $ forge build
 ```
 
-### Test
+#### Test
 
 ```shell
 $ forge test
 ```
 
-### Format
 
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
+#### Help
 
 ```shell
 $ forge --help
 $ anvil --help
 $ cast --help
+```
+
+#### Deploy
+
+Run this script to deploy and verify the NFT contract on sepolia.
+
+```shell
+$ forge create --rpc-url https://rpc2.sepolia.org --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_KEY --verify src/FoundryNFT.sol:FoundryNFT
 ```
